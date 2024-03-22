@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}  {{post.title}} {% endblock %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+
+<p>{{post.content}}</p>
+<div>Post By {{post.user.first_name}} {{post.user.last_name}} on {{post.created_at}}</div>
+
+
+<form>
+    <button type = 'submit' formaction = '/users/{{post.user.id}}' formmethod = 'GET'>
+        Return
+    </button>
+    <button type='submit' formaction="/post/{{ post.id }}/edit" formmethod = 'GET'>
+        Edit
+    </button>
+    <button type='submit' formaction="/post/{{ post.id }}/delete" formmethod = 'POST'>
+        Delete
+    </button>
+</form>
+
+{% endblock %}

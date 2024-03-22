@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} New User Form {% endblock %}
+{% block content %}
+<form method = 'POST'>
+    <input type = 'text' name = 'first_name' id=" first_name" placeholder = 'Enter First Name'>
+    <input type = 'text' name = 'last_name'  id = 'last_name' placeholder = 'Enter Last Name'>
+    <input type = 'text' name = 'image_url'  id = 'image_url' placeholder = 'Image Url'>
+    <button type = 'submit'>Submit User Info</button>
+</form>
+{% endblock %}

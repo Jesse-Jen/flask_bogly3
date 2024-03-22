@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} User Info {% endblock %}
+{% block content %}
+<div>
+    {% if user.img_url %}
+    <div>
+        <img src="{{ user.img_url }}" alt="{{ user.first_name }} {{ user.last_name }}">
+    </div>
+    {% endif %}
+
+    <form>
+        <button type="submit" formaction="/users/{{ user.id }}/edit"  formmethod = 'GET'>
+            Edit
+        </button>
+        <button type="submit" formaction="/users/{{ user.id }}/delete" formmethod = 'POST'>
+            Delete
+        </button>
+    </form>
+
+    <h2>Posts</h2>
+        <ul>
+            {% for post in user.posts %}
+                <li>
+                    <a href = '/post/{{post.id}}'> {{post.title}} </a>
+                </li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}

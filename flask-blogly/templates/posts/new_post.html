@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Create New Post {% endblock %}
+{% block content %}
+<h1>Create Post</h1>
+
+<form method = 'POST'>
+    <input type = 'text' name = 'title' id='title' placeholder = 'Enter Title'>
+    <input type = 'text' name = 'content'  id = 'content' placeholder = 'Enter Content'>
+    <a href = '/users/{{user.id}}'>Cancel</a>
+    <button type = 'submit'>Create Post</button>
+</form>
+{% endblock %}
